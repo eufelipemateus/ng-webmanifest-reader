@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { inject, ModuleWithProviders, NgModule, Optional, PLATFORM_ID, SkipSelf } from '@angular/core';
+import {  ModuleWithProviders, NgModule } from '@angular/core';
 import { NgWebmanifestReader, NgWebmanifestReaderConfig } from './ng-webmanifest-reader.service';
 
 
