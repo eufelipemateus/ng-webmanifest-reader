@@ -1,4 +1,4 @@
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { inject, Inject, Injectable, Optional, PLATFORM_ID } from '@angular/core';
 import WebManifest from './Model/WebManifest';
 
@@ -10,21 +10,19 @@ export class NgWebmanifestReaderConfig{
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NgWebmanifestReader {
   public static readonly STORAGE_KEY = '__web_manifest_reader_storage';
 
   public static readonly PWA_COMPAT_STORAGE_KEY = '__pwacompat_manifest';
 
-  private readonly internalStorage!: Storage;
-
+  private internalStorage!: Storage;
 
   constructor(
-    @Inject(PLATFORM_ID) private platformId: string,
-      private config: NgWebmanifestReaderConfig
+    private config: NgWebmanifestReaderConfig = new NgWebmanifestReaderConfig(),
+    @Optional() @Inject(PLATFORM_ID) private platformId: Object | string ='server'
   ) {
-
     if(isPlatformBrowser(platformId)){
       this.internalStorage = window.sessionStorage
     }
@@ -52,7 +50,7 @@ export class NgWebmanifestReader {
    * @return A promise with the manifest content or null if an error has occurred.
    */
   public async read(): Promise<WebManifest | null> {
-    if(!isPlatformBrowser(this.platformId)){
+    if(isPlatformServer(this.platformId)){
         return null
     }
 

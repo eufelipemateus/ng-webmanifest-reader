@@ -14,7 +14,8 @@
     "paths": {
       "ng-webmanifest-reader": [
         "dist/ng-webmanifest-reader"
-      ]
+      ],
+      "@angular/*": ["node_modules/@angular/*"],
     },
     "declaration": false,
     "downlevelIteration": true,
@@ -31,7 +32,7 @@
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
+    "strictInjectionParameters": false,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   }
