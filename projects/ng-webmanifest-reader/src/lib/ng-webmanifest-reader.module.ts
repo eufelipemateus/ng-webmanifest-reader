@@ -12,7 +12,7 @@ export class NgWebmanifestReaderModule {
     return {
       ngModule: NgWebmanifestReaderModule,
       providers: [
-          {provide: PLATFORM_ID, useValue: PLATFORM_ID},
+          {provide: PLATFORM_ID, useValue: 'PLATFORM_ID'},
           {provide: NgWebmanifestReaderConfig , useValue: config},
           {provide: NgWebmanifestReader,
             useFactory: (config:NgWebmanifestReaderConfig , platformId : string)=>{

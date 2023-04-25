@@ -10,7 +10,8 @@ export class NgWebmanifestReaderConfig{
 }
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'platform',
+  deps: [NgWebmanifestReaderConfig, PLATFORM_ID]
 })
 export class NgWebmanifestReader {
   public static readonly STORAGE_KEY = '__web_manifest_reader_storage';
