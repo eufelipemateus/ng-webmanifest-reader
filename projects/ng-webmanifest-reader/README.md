@@ -1,24 +1,11 @@
-# NgWebmanifestReader
+# ng-webmanifest-reader
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+This package read the **manifefest.json** file. with angular. 
 
-## Code scaffolding
+## Forked
 
-Run `ng generate component component-name --project ng-webmanifest-reader` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-webmanifest-reader`.
-> Note: Don't forget to add `--project ng-webmanifest-reader` or else it will be added to the default project in your `angular.json` file. 
+[@easy-pwa/web-manifest-reader](https://github.com/easy-pwa/web-manifest-reader)
 
-## Build
+## Author  
 
-Run `ng build ng-webmanifest-reader` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Publishing
-
-After building your library with `ng build ng-webmanifest-reader`, go to the dist folder `cd dist/ng-webmanifest-reader` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ng-webmanifest-reader` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**[Felipe Mateus](https://felipemateus.com)** - [eufelipemateus](https://github.com/eufelipemateus)
