@@ -1,6 +1,14 @@
 {
   "name": "ng-webmanifest-reader",
+  "description": "Read web.manifest with angular.",
   "version": "0.0.0",
+  "license" : "MIT",
+  "author":
+  {
+    "name" : "Felipe Mateus",
+    "email" : "eu@felipemateus.com",
+    "url" : "http://felipemateus.com"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -35,5 +43,7 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "ng-packagr": "^15.0.0",
     "typescript": "~4.8.2"
-  }
+  },
+  "repository": "github:eufelipemateus/ng-webmanifest-reader",
+  "homepage": "https://github.com/eufelipemateus/ng-webmanifest-reader#readme"
 }
