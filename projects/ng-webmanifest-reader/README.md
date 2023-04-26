@@ -1,24 +1,77 @@
-# NgWebmanifestReader
+# ng-webmanifest-reader
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+This package read the **manifefest.json** file. with angular. 
 
-## Code scaffolding
+# Example 
 
-Run `ng generate component component-name --project ng-webmanifest-reader` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-webmanifest-reader`.
-> Note: Don't forget to add `--project ng-webmanifest-reader` or else it will be added to the default project in your `angular.json` file. 
+### app.module.ts
+```typescript
+import { NgModule } from  '@angular/core'
+import { BrowserModule } from  '@angular/platform-browser'
 
-## Build
+import { AppComponent } from  './app.component'
+import { NgWebmanifestReaderModule } from  'ng-webmanifest-reader'
 
-Run `ng build ng-webmanifest-reader` to build the project. The build artifacts will be stored in the `dist/` directory.
+@NgModule({
+	declarations: [AppComponent],
+	imports: [
+		BrowserModule,
+		NgWebmanifestReaderModule.forRoot()
+	],
+	providers: [],
+	bootstrap: [AppComponent]
+})
+export  class  AppModule {}
+```
 
-## Publishing
 
-After building your library with `ng build ng-webmanifest-reader`, go to the dist folder `cd dist/ng-webmanifest-reader` and run `npm publish`.
 
-## Running unit tests
+### app.service.ts
+```typescript
+import { Injectable } from  '@angular/core'
+import { NgWebmanifestReader, WebManifest } from  'ng-webmanifest-reader'
+  
 
-Run `ng test ng-webmanifest-reader` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@Injectable({
+providedIn: 'root',
+})
 
-## Further help
+export  class  WebmanifestService {
+	private  manifest: WebManifest  = {}
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+	constructor (_service: NgWebmanifestReader) {
+		_service.readCallback((data: WebManifest | null, error: any) => {
+			this.loadManifest(data, error)
+		})
+	}
+
+	private  loadManifest (data: WebManifest | null, error: any) {
+		if (data) {
+			this.manifest  =  data
+		}
+	}
+
+	get  version (): string {
+		if (this.manifest) {
+			return  this.manifest.version  ||  ''
+		} else {
+			return  ''
+		}
+	}
+}
+```
+
+# Store Cache
+
+This packe has store cache disable by default to anable import moldule with **NgWebmanifestReaderModule.forRoot({storeCache: true})**
+
+
+
+
+## Forked
+
+[@easy-pwa/web-manifest-reader](https://github.com/easy-pwa/web-manifest-reader)
+
+## Author  
+
+**[Felipe Mateus](https://eufelipemateus.com)** - [eufelipemateus](https://github.com/eufelipemateus)
