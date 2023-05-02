@@ -2,12 +2,11 @@
   "name": "ng-webmanifest-reader",
   "description": "Read web.manifest with angular.",
   "version": "0.0.0",
-  "license" : "MIT",
-  "author":
-  {
-    "name" : "Felipe Mateus",
-    "email" : "eu@felipemateus.com",
-    "url" : "http://felipemateus.com"
+  "license": "MIT",
+  "author": {
+    "name": "Felipe Mateus",
+    "email": "eu@felipemateus.com",
+    "url": "http://felipemateus.com"
   },
   "scripts": {
     "ng": "ng",
@@ -31,8 +30,8 @@
     "zone.js": "~0.12.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^15.0.5",
-    "@angular/cli": "~15.2.6",
+    "@angular-devkit/build-angular": "^15.2.7",
+    "@angular/cli": "~15.2.7",
     "@angular/compiler-cli": "^15.0.0",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.5.0",
