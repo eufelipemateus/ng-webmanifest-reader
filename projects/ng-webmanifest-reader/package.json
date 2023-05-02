@@ -4,8 +4,8 @@
   "version": "0.0.1",
   "license" : "MIT",
   "peerDependencies": {
-    "@angular/common": "^15.0.1",
-    "@angular/core": "^15.0.1",
+    "@angular/common": "^15.2.8",
+    "@angular/core": "^15.2.8",
     "@angular/platform-browser": "^15.2.8"
   },
   "dependencies": {
