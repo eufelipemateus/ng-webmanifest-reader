@@ -41,10 +41,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build-package
-          path: |
-              dist
-              README.md
-
+          path: dist
 
   deploy_github:
     name: Deploy to github
@@ -63,7 +60,7 @@ jobs:
       - name: Update Package.json version
         uses: jossef/action-set-json-field@v2.1
         with:
-          file:  dist/${{ github.event.repository.name }}/package.json
+          file:  ${{ github.event.repository.name }}/package.json
           field: name
           value: "@${{github.actor}}/${{ github.event.repository.name }}"
 
@@ -75,7 +72,7 @@ jobs:
 
       - name: Publish Package in github
         run: |
-          cd dist/${{ github.event.repository.name }}
+          cd ${{ github.event.repository.name }}
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -102,7 +99,7 @@ jobs:
 
       - name:  Publish Package in npmjs
         run: |
-          cd dist/${{ github.event.repository.name }}
+          cd ${{ github.event.repository.name }}
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
